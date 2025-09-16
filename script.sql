@@ -35,3 +35,35 @@ CREATE TABLE `db_alquiler`.`alquileres` (
     CONSTRAINT `fk_alquileres__propiedades`
         FOREIGN KEY (`id_propiedad`) REFERENCES `propiedades`(`id_propiedad`)
 );
+
+-- Consultas: 
+
+-- INSERT
+insert into  clientes (nombre, correo, telefono)
+values 
+('Mariana López', 'mariana.lopez@gmail.com', '3004567891'),
+('Julián Torres', 'julian.torres@yahoo.com', '3012233445'),
+('Sofía Herrera', 'sofia.herrera@hotmail.com', '3027788990');
+
+select * from clientes;
+-- UPDATE
+update clientes
+set nombre = 'Julián Torres Gómez',
+    correo = 'julian.gomez@example.com',
+    telefono = '3111112222'
+WHERE id_cliente = 5;
+
+-- DELETE
+delete from clientes
+where id_cliente = 6;
+
+-- CONSULTA
+SELECT * FROM clientes;
+
+-- INSERT DE TABLA PROPIEDADES
+INSERT INTO propiedades (direccion, tipo, precio_mensual, disponible)
+VALUES 
+('Calle 80 #45-22', 'Apartamento', 1500000.00, 1),
+('Carrera 12 #34-56', 'Casa', 2800000.00, 1),
+('Avenida 7 #89-10', 'Local', 2000000.00, 0);
+
